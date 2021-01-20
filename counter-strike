@@ -1,0 +1,20 @@
+energy = int(input())
+counter = 0
+
+while True:
+
+    if counter % 3 == 0:
+        energy += counter
+    command = input()
+    if command == "End of battle" and energy >= 0:
+        print(f"Won battles: {counter}. Energy left: {energy}")
+        break
+
+    distance = int(command)
+
+    if distance > energy:
+        energy = 0
+        print(f"Not enough energy! Game ends with {counter} won battles and {energy} energy")
+        break
+    counter += 1
+    energy -= distance
